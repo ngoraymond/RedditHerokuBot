@@ -16,7 +16,7 @@ def main():
         print("--------------------------------------")
         # Get top 5 rising posts in the risingSubs list
         currentSub = reddit.subreddit(risingSubs[index])
-        print('r/'+currentSub)
+        print('r/'+risingSubs[index])
         for submission in currentSub.rising(limit=5):
             print(submission.title)
             #print(submission.permalink)

@@ -45,7 +45,7 @@ def main():
                 subReply.reply('From: https://www.reddit.com'+submission.permalink)
                 time.sleep(random.randint(3,10))
                 #Upvote the repost from my other bot
-                commentBot.submission(id=subReply.id()).upvote()
+                commentBot.submission(id=subReply.id).upvote()
                 time.sleep(random.randint(3,10))
         #move on to the next subreddit
         index = (index+1)%(len(risingSubs))

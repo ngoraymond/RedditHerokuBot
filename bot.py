@@ -9,8 +9,9 @@ import login
 
 def main():
     reddit = login.login()
+    commentBot = login.commentBotLogin()
     subred = reddit.subreddit('College_Prestige')
-    risingSubs = ['all', 'funny','memes','dankmemes','wallstreetbets','stocks']
+    risingSubs = ['all','funny','memes','dankmemes','wallstreetbets','stocks']
     index = 1
     while True:
         print("--------------------------------------")
@@ -42,7 +43,10 @@ def main():
             #Create permalink of original post as a comment
             for subReply in reddit.redditor('Awareness-Infinite').submissions.new(limit=1):
                 subReply.reply('From: https://www.reddit.com'+submission.permalink)
-            time.sleep(random.randint(3,10))
+                time.sleep(random.randint(3,10))
+                #Upvote the repost from my other bot
+                commentBot.submission(id=subReply.id()).upvote()
+                time.sleep(random.randint(3,10))
         #move on to the next subreddit
         index = (index+1)%(len(risingSubs))
         #wait up to 10 minutes

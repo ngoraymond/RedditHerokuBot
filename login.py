@@ -13,3 +13,16 @@ def login():
     except:
         print ("Failed to log in!")
     return r
+
+def commentBotLogin():
+    print ("Logging in..")
+    try:
+        r = praw.Reddit(username = os.environ["reddit_username_2"],
+                password = os.environ["reddit_password"],
+                client_id = os.environ["client_id_2"],
+                client_secret = os.environ["client_secret_2"],
+                user_agent = "Reddit TopCom Bot 0.1")
+        print ("Logged in!")
+    except:
+        print ("Failed to log in!")
+    return r

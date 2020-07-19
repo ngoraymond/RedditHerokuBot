@@ -12,7 +12,7 @@ def main():
     commentBot = login.commentBotLogin()
     subred = reddit.subreddit('College_Prestige')
     risingSubs = ['all','funny','memes','dankmemes','wallstreetbets','stocks']
-    index = 0
+    index = 1
     while True:
         print("--------------------------------------")
         # Get top 5 rising posts in the risingSubs list

@@ -42,7 +42,7 @@ def main():
             time.sleep(random.randint(5,30))
             #Create permalink of original post as a comment
             for subReply in reddit.redditor('Awareness-Infinite').submissions.new(limit=1):
-                subReply.reply('From: https://www.reddit.com'+submission.permalink)
+                commentBot.submission(id=subReply.id).reply('From: https://www.reddit.com'+submission.permalink)
                 time.sleep(random.randint(3,10))
                 #Upvote the repost from my other bot
                 commentBot.submission(id=subReply.id).upvote()

@@ -45,7 +45,7 @@ def main():
                 commentBot.submission(id=subReply.id).reply('From: https://www.reddit.com'+submission.permalink)
                 time.sleep(random.randint(3,10))
                 #Upvote the repost from my other bot
-                commentBot.submission(id=subReply.id).upvote()
+                #commentBot.submission(id=subReply.id).upvote()
                 time.sleep(random.randint(3,10))
                 for comment in submission.comments:
                     commentBot.submission(id=subReply.id).reply(comment.body)

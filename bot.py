@@ -12,7 +12,7 @@ def main():
     commentBot = login.commentBotLogin()
     subred = reddit.subreddit('College_Prestige')
     risingSubs = ['all','funny','memes','dankmemes','wallstreetbets','stocks']
-    index = 1
+    index = 0
     while True:
         print("--------------------------------------")
         # Get top 5 rising posts in the risingSubs list
@@ -47,6 +47,9 @@ def main():
                 #Upvote the repost from my other bot
                 commentBot.submission(id=subReply.id).upvote()
                 time.sleep(random.randint(3,10))
+                for comment in submission.comments:
+                    commentBot.submission(id=subReply.id).reply(comment.body)
+                    time.sleep(random.randint(3,10))
         #move on to the next subreddit
         index = (index+1)%(len(risingSubs))
         #wait up to 10 minutes
